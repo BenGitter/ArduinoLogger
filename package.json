@@ -1,0 +1,27 @@
+{
+  "name": "arduino-logger",
+  "version": "1.0.0",
+  "description": "Site to show Arduino data and API for Arduino to POST data.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenGitter/ArduinoLogger.git"
+  },
+  "keywords": [
+    "Arduino",
+    "Node",
+    "Mongo"
+  ],
+  "author": "Benjamin van Zwienen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenGitter/ArduinoLogger/issues"
+  },
+  "homepage": "https://github.com/BenGitter/ArduinoLogger#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
