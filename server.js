@@ -7,6 +7,12 @@ var port = process.env.PORT || 8080;
 //var url = "mongodb://bvanzwienen:arduinoFree@ds042379.mlab.com:42379/arduino";
 var url = process.env.DB_URL;
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get("/", function(req, res){
   res.end("Try /getData to get data.");
 });
