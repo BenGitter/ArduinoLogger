@@ -29,7 +29,7 @@ app.post('/data', function(req, res){
   var date = new Date();
   var value = parseInt(req.query.value);
   date.setMilliseconds(date.getMilliseconds() + value);
-  saveData(value);
+  saveData(date);
 	res.end(value.toString());
 });
 
