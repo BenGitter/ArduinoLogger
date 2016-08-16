@@ -18,8 +18,12 @@ app.get("/", function(req, res){
 });
 
 app.get('/getData', function(req, res) {
+  var arr = [];
   getData(function(docs){
-    res.send(docs);
+    for(var doc in docs){
+      arr.push(docs[doc].value);
+    }
+    res.send(arr);
     res.end("");
   });
 });
@@ -45,7 +49,7 @@ function getData(callback){
   MongoClient.connect(url, function(err, db){
     var collection = db.collection("test");
 
-    collection.find({}).toArray(function(err, docs){
+    collection.find({}, {_id: 0, value: 1}).toArray(function(err, docs){
       callback(docs);
     });
 
