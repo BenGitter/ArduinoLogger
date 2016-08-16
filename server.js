@@ -26,9 +26,11 @@ app.get('/getData', function(req, res) {
 
 
 app.post('/data', function(req, res){
-  var value = req.query.value;
+  var date = new Date();
+  var value = parseInt(req.query.value);
+  date.setMilliseconds(date.getMilliseconds() + value);
   saveData(value);
-	res.end("Data received");
+	res.end(value.toString());
 });
 
 app.use(express.static(__dirname));
