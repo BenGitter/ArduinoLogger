@@ -14,7 +14,7 @@ app.use(function(req, res, next) {
 });
 
 app.get("/", function(req, res){
-  res.end("Try /getData to get data.");
+  res.end("Try /getData to get data. Use /data to post data.");
 });
 
 app.get('/getData', function(req, res) {
@@ -24,11 +24,14 @@ app.get('/getData', function(req, res) {
   });
 });
 
+
 app.post('/data', function(req, res){
   var value = req.query.value;
   saveData(value);
-	res.end("");
+	res.end("Data received");
 });
+
+app.use(express.static(__dirname));
 
 app.listen(port, function () {
   console.log('App listening on port', port);
