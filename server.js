@@ -28,7 +28,7 @@ app.get('/getData', function(req, res) {
 app.post('/data', function(req, res){
   var date = new Date();
   var value = parseInt(req.query.value);
-  date.setMilliseconds(date.getMilliseconds() + value);
+  date.setMilliseconds(date.getMilliseconds() - value);
   date.setHours(date.getHours() + 2);
   saveData(date);
 	res.end(value.toString());
