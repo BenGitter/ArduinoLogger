@@ -8,7 +8,7 @@ var port = process.env.PORT || 8080;
 var url = process.env.DB_URL;
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://s.codepen.io");
+  res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
